@@ -4,7 +4,7 @@
 
 **Curso: Reprograma {BACKEND}**
 
-Essa semana apredemos a usar os comandos (request, response) e a usar a ferramenta postman.
+Essa semana aprendemos a usar os comandos (request, response) e a usar a ferramenta postman.
 
 O foco da atividade foi entender quais são os comandos necessário para criar um servidor com o node.js.
 
