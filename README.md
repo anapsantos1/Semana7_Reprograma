@@ -1,28 +1,42 @@
-# Para casa!
+# Setima semana de aula na Reprograma ![rocket](https://github.githubassets.com/images/icons/emoji/unicode/1f680.png)
 
-Para casa ficam as seguintes rotas das demandas de negócio:
+**Autora: Ana Paula Araujo**
+
+**Curso: Reprograma {BACKEND}**
+
+Essa semana apredemos a usar os comandos (request, response) e a usar a ferramenta postman.
+
+O foco da atividade foi entender quais são os comandos necessário para criar um servidor com o node.js.
+
+No exercício criamos as seguites rotas das demandas de negócio:
 
 ### [GET] "/estados/todos"
 
 Retorna lista completa de estados-cidades
 
+```
+app.get("/estados/todos", (request, response) => {
+
+    response.status(200).send(estados.filter(estado => estado))
+})
+
+```
+
 ### [GET] "/estados/{sigla}"
 
 Retorna nome, sigla e cidades de uma sigla especifica
 
-O exercício para casa devera ser feito dentro da pasta servidor-para-casa. Lá você devera criar um novo servidor e configurar sua porta e criar essas duas rotas. 
+```
+app.get("/estados/:sigla", (request, response) => {
 
-```bash
-		\--📂 On11-TodasEmTech-s7-API-GET
-			|
-			\--📂meu-primeiro-servidor
-			|
-			\--📂meu-primeiro-servidor
-			|				
-			**\--📂servidor-para-casa
-			    |   server.js
-			    📂---data
-			    |       estados-cidades.json**
+    const valorSigla = request.params.sigla
+    console.log(valorSigla)
+
+    response.status(200).send(estados.find(estado => estado.sigla == valorSigla))
+})
 ```
 
-Observe que o json de estados-cidades, está um pouco mais simples! **O foco desse exercício é que vocês consigam entender bem quais são os comandos necessários para criar um servidor com node.js**
+**Material para estudo: **
+
+[Fonte: Mozilla (Mensagens HTTP)](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Messages)
+
